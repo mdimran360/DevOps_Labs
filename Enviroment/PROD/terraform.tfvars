@@ -2,33 +2,33 @@ rg = {
 
   rg1 = {
 
-    name     = "Imran_RG"
-    location = "Central India"
+    name     = "Imran_RG_PROD"
+    location = "East US"
   }
 }
 
 vnet = {
 
   vnet1 = {
-    name                = "imranvnet"
+    name                = "imranvnetprod"
     address_space       = ["10.0.0.0/16"]
-    location            = "Central India"
-    resource_group_name = "Imran_RG"
+    location            = "East US"
+    resource_group_name = "Imran_RG_PROD"
   }
 }
 
 subnet = {
   subnet1 = {
-    name                 = "imransubnet1"
-    resource_group_name  = "Imran_RG"
-    virtual_network_name = "imranvnet"
+    name                 = "imransubnetprod1"
+    resource_group_name  = "Imran_RG_PROD"
+    virtual_network_name = "imranvnetprod"
     address_prefixes     = ["10.0.2.0/24"]
   }
 
   #         subnet1={
-  #  name                 = "imransubnet2"
-  #   resource_group_name  = "Imran_RG"
-  #   virtual_network_name = "imranvnet"
+  #  name                 = "imransubnetprod2"
+  #   resource_group_name  = "Imran_RG_PROD"
+  #   virtual_network_name = "imranvnetprod"
   #   address_prefixes     = ["10.0.3.0/24"] 
   #     }
 }
@@ -36,16 +36,16 @@ subnet = {
 pupip = {
 
   pip1 = {
-    name                = "frontentimranpip1"
-    resource_group_name = "Imran_RG"
-    location            = "Central India"
+    name                = "frontentimranprodpip1"
+    resource_group_name = "Imran_RG_PROD"
+    location            = "East US"
     allocation_method   = "Static"
     sku                 = "Standard"
   }
   pip2 = {
-    name                = "frontentimranpip2"
-    resource_group_name = "Imran_RG"
-    location            = "Central India"
+    name                = "frontentimranprodpip2"
+    resource_group_name = "Imran_RG_PROD"
+    location            = "East US"
     allocation_method   = "Static"
     sku                 = "Standard"
   }
@@ -53,27 +53,27 @@ pupip = {
 
 nic = {
   nic1 = {
-    name                 = "frontentimrannic1"
-    location             = "Central India"
-    resource_group_name  = "Imran_RG"
-    ipname               = "frontentimranpip1"
-    virtual_network_name = "imranvnet"
-    subnetname           = "imransubnet1"
+    name                 = "frontentimranprodnic1"
+    location             = "East US"
+    resource_group_name  = "Imran_RG_PROD"
+    ipname               = "frontentimranprodpip1"
+    virtual_network_name = "imranvnetprod"
+    subnetname           = "imransubnetprod1"
   }
   nic2 = {
-    name                 = "frontentimrannic2"
-    location             = "Central India"
-    resource_group_name  = "Imran_RG"
-    ipname               = "frontentimranpip2"
-    virtual_network_name = "imranvnet"
-    subnetname           = "imransubnet1"
+    name                 = "frontentimranprodnic2"
+    location             = "East US"
+    resource_group_name  = "Imran_RG_PROD"
+    ipname               = "frontentimranprodpip2"
+    virtual_network_name = "imranvnetprod"
+    subnetname           = "imransubnetprod1"
   }
 }
 nsg = {
   nsg1 = {
-    name                = "imrannsg"
-    location            = "Central India"
-    resource_group_name = "Imran_RG"
+    name                = "imrannsgprod"
+    location            = "East US"
+    resource_group_name = "Imran_RG_PROD"
   }
 
 
@@ -95,32 +95,32 @@ rule = {
 
 nsgass = {
   nsgass1 = {
-    resource_group_name  = "Imran_RG"
-    virtual_network_name = "imranvnet"
-    subnetname           = "imransubnet1"
-    nsgname              = "imrannsg"
+    resource_group_name  = "Imran_RG_PROD"
+    virtual_network_name = "imranvnetprod"
+    subnetname           = "imransubnetprod1"
+    nsgname              = "imrannsgprod"
 
   }
 }
 vms = {
   vm1 = {
 
-    name                = "frontendimranvm1"
-    location            = "Central India"
-    resource_group_name = "Imran_RG"
+    name                = "frontendimranprodvm1"
+    location            = "East US"
+    resource_group_name = "Imran_RG_PROD"
     size                = "Standard_F2"
     admin_username      = "Imran"
     admin_password      = "Imran@12345678"
-    nicname             = "frontentimrannic1"
+    nicname             = "frontentimranprodnic1"
   }
   vm = {
 
-    name                = "frontendimranvm2"
-    location            = "Central India"
-    resource_group_name = "Imran_RG"
+    name                = "frontendimranprodvm2"
+    location            = "East US"
+    resource_group_name = "Imran_RG_PROD"
     size                = "Standard_F2"
     admin_username      = "Imran"
     admin_password      = "Imran@12345678"
-    nicname             = "frontentimrannic2"
+    nicname             = "frontentimranprodnic2"
   }
 }
